@@ -1,0 +1,16 @@
+.main {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.main h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.2;
+}
+
+.main p {
+  margin: 0;
+}
