@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import type { LayoutProps } from "@/types/layout-props";
 import { SiteLayout } from "@/components/layout/site-layout";
 import "./globals.css";
 
@@ -18,10 +18,10 @@ const themeScript = `
 export const metadata: Metadata = {
   title: "Eleni Kapona | Front-End Developer in Cyprus",
   description:
-    "Eleni Kapona is a front-end developer based in Cyprus. Explore her skills and portfolio, get in touch, or download her CV.",
+    "Eleni Kapona is a front-end developer based in Cyprus. Explore her skills and portfolio, get in touch, or view her CV.",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>

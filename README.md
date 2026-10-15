@@ -23,6 +23,8 @@ src/app/
 src/components/
   layout/          Shared navigation, theme toggle, and page layout
   sections/        Page sections styled with Tailwind utilities
+src/data/          Skills, projects, navigation, and contact information
+src/types/         Shared models and component props, each in its own file
 public/            Static assets such as images and icons
 ```
 
@@ -39,6 +41,8 @@ public/            Static assets such as images and icons
 ## Development steps
 
 Use Tailwind utilities in components. The theme provides `primary`, `secondary`, `white`, and `black` colors, plus `background`, `foreground`, and `hero-accent` colors that adapt to the selected theme. The `font-serif` utility uses Georgia, and `dark:` utilities follow the existing theme toggle.
+
+Edit content lists in `src/data/` and their type definitions in `src/types/`. The View CV link opens the PDF from `public/Eleni-Kapona-CV.pdf` in a new browser tab.
 
 Each step is a separate Git commit. The first step sets up the framework, configuration, and a placeholder home page. Future steps can add the portfolio layout, about section, projects, and contact information.
 

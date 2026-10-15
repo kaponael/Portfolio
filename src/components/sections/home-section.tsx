@@ -14,9 +14,11 @@ export function HomeSection() {
         <a
           className="mt-8 inline-flex min-h-14 items-center justify-center gap-3.5 rounded-full border border-secondary/60 bg-primary px-6 py-3.5 text-base leading-[1.5] font-medium text-white shadow-[0_8px_24px_color-mix(in_srgb,var(--color-primary)_15%,transparent)] transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-secondary hover:text-primary motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           href="/Eleni-Kapona-CV.pdf"
-          download="Eleni-Kapona-CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View CV (opens in a new tab)"
         >
-          Download CV
+          View CV
           <svg
             className="shrink-0"
             width="20"
@@ -30,7 +32,7 @@ export function HomeSection() {
             aria-hidden="true"
             focusable="false"
           >
-            <path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4" />
+            <path d="M7 17 17 7M7 7h10v10" />
           </svg>
         </a>
       </div>

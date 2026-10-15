@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
+import { contactEmail, socialLinks } from "@/data/contact";
+import type { ContactIconProps } from "@/types/contact-icon-props";
 
-function ContactIcon({ children, size = 18 }: { children: ReactNode; size?: number }) {
+function ContactIcon({ children, size = 18 }: ContactIconProps) {
   return (
     <svg
       width={size}
@@ -48,13 +49,13 @@ export function ContactSection() {
         </div>
         <a
           className="mt-8.75 flex min-h-11 w-fit shrink-0 items-center gap-[9px] border-b border-current pb-1.75 text-[0.78rem] leading-normal transition-[color,gap] duration-200 hover:gap-[13px] hover:text-hero-accent motion-reduce:transition-none min-[761px]:mt-0"
-          href="mailto:kaponael0701@gmail.com"
+          href={`mailto:${contactEmail}`}
         >
           <ContactIcon>
             <rect x="3" y="5" width="18" height="14" rx="2" />
             <path d="m3 6 9 7 9-7" />
           </ContactIcon>
-          <span className="min-w-0 [overflow-wrap:anywhere]">kaponael0701@gmail.com</span>
+          <span className="min-w-0 [overflow-wrap:anywhere]">{contactEmail}</span>
           <ContactIcon size={16}>
             <path d="M7 17 17 7M7 7h10v10" />
           </ContactIcon>
@@ -63,34 +64,33 @@ export function ContactSection() {
       <footer className="flex flex-col items-start gap-3.75 px-1 py-8.5 text-[0.68rem] text-primary/75 min-[481px]:flex-row min-[481px]:flex-wrap min-[481px]:items-center min-[481px]:justify-between min-[481px]:gap-5 dark:text-white/75">
         <span>© {new Date().getFullYear()} Eleni Kapona</span>
         <nav className="flex flex-wrap gap-3" aria-label="Social profiles">
-          <a
-            className={socialLinkClasses}
-            href="https://www.instagram.com/elshub_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Eleni on Instagram (opens in a new tab)"
-          >
-            <ContactIcon>
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
-            </ContactIcon>
-            <span>Instagram</span>
-          </a>
-          <a
-            className={socialLinkClasses}
-            href="https://www.linkedin.com/in/elkapp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Eleni on LinkedIn (opens in a new tab)"
-          >
-            <ContactIcon>
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <path d="M7.5 10v7m4-7v7m0-4a3 3 0 0 1 6 0v4" />
-              <circle cx="7.5" cy="7" r="0.75" fill="currentColor" stroke="none" />
-            </ContactIcon>
-            <span>LinkedIn</span>
-          </a>
+          {socialLinks.map(({ label, href }) => (
+            <a
+              key={label}
+              className={socialLinkClasses}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Eleni on ${label} (opens in a new tab)`}
+            >
+              <ContactIcon>
+                {label === "Instagram" ? (
+                  <>
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+                  </>
+                ) : (
+                  <>
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M7.5 10v7m4-7v7m0-4a3 3 0 0 1 6 0v4" />
+                    <circle cx="7.5" cy="7" r="0.75" fill="currentColor" stroke="none" />
+                  </>
+                )}
+              </ContactIcon>
+              <span>{label}</span>
+            </a>
+          ))}
         </nav>
       </footer>
     </section>

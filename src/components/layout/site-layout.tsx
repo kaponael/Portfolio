@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
+import type { LayoutProps } from "@/types/layout-props";
 import { SiteHeader } from "./site-header";
 
-export function SiteLayout({ children }: { children: ReactNode }) {
+export function SiteLayout({ children }: LayoutProps) {
   return (
     <div className="isolate min-h-svh">
       <div className="pointer-events-none fixed inset-0 -z-10 opacity-86" aria-hidden="true">

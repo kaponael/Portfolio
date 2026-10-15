@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
+import type { MobileNavigationProps } from "@/types/mobile-navigation-props";
 import { circularButtonClasses, glassClasses, navLinkClasses } from "./navigation-styles";
 
-type NavigationLink = { label: string; href: string };
-
-export function MobileNavigation({ links }: { links: NavigationLink[] }) {
+export function MobileNavigation({ links }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
