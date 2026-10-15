@@ -1,4 +1,5 @@
 import { HomeSection } from "@/components/sections/home-section";
+import { SkillsSection } from "@/components/sections/skills-section";
 
 const sectionClasses =
   "mx-auto min-h-svh w-full max-w-7xl px-[clamp(1.5rem,6vw,6rem)] pt-[calc(var(--section-offset)+3rem)] pb-16";
@@ -8,9 +9,7 @@ export default function Home() {
   return (
     <>
       <HomeSection />
-      <section id="skills" className={sectionClasses} aria-labelledby="skills-title">
-        <h2 id="skills-title" className={sectionTitleClasses}>Skills</h2>
-      </section>
+      <SkillsSection />
       <section id="portfolio" className={sectionClasses} aria-labelledby="portfolio-title">
         <h2 id="portfolio-title" className={sectionTitleClasses}>Portfolio</h2>
       </section>
