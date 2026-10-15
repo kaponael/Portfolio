@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" width="84" height="84">
+  <title>Portfolio logo</title>
+  <rect width="84" height="84" rx="18" fill="#0d1d37"/>
+  <g transform="translate(9 16)" fill="#ffffff">
+    <path d="m35.7 52v-51.3h-33.6v10.5h21.6v9.8h-20.2v10.5h20.2v10h-22v10.5z"/>
+    <path d="m30.6 52h-12v-51.3h12v23.3q1.7-2.4 3.2-4.5 1.5-2.1 2.6-3.4l12.2-15.4h14.1l-18.8 23.7 22.4 27.6h-15.6l-14.5-17.9-5.6 7.1z"/>
+  </g>
+</svg>

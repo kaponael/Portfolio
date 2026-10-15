@@ -1,6 +1,26 @@
 :root {
-  --background: #fafafa;
-  --foreground: #171717;
+  --primary: #0d1d37;
+  --secondary: #5794c7;
+  --white: #ffffff;
+  --black: #000000;
+
+  color-scheme: light;
+  --background: var(--white);
+  --foreground: var(--primary);
+  --theme-duration: 1.6s;
+  --theme-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --section-offset: 7rem;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --background: var(--primary);
+  --foreground: var(--white);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--section-offset);
 }
 
 * {
@@ -19,8 +39,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color var(--theme-duration) var(--theme-easing),
+    color var(--theme-duration) var(--theme-easing);
 }
 
 a {
   color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --theme-duration: 250ms;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

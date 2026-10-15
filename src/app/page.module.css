@@ -1,16 +1,18 @@
-.main {
+.section {
   width: 100%;
-  max-width: 64rem;
+  max-width: 80rem;
+  min-height: 100svh;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: calc(var(--section-offset) + 3rem) clamp(1.5rem, 6vw, 6rem) 4rem;
 }
 
-.main h1 {
+.section h1,
+.section h2 {
   margin: 0 0 1rem;
   font-size: clamp(2rem, 6vw, 3rem);
   line-height: 1.2;
 }
 
-.main p {
+.section p {
   margin: 0;
 }
