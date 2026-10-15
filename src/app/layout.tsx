@@ -16,8 +16,9 @@ const themeScript = `
 `;
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "My personal portfolio.",
+  title: "Eleni Kapona | Front-End Developer in Cyprus",
+  description:
+    "Eleni Kapona is a front-end developer based in Cyprus. Explore her skills and portfolio, get in touch, or download her CV.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

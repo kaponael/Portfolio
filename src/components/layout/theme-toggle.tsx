@@ -1,7 +1,10 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import styles from "./site-header.module.css";
+import { circularButtonClasses } from "./navigation-styles";
+
+const iconClasses =
+  "col-start-1 row-start-1 size-5.5 origin-center transition-[opacity,rotate,scale] duration-(--theme-duration) ease-(--theme-easing) motion-reduce:rotate-0 motion-reduce:scale-100 motion-reduce:dark:rotate-0 motion-reduce:dark:scale-100";
 
 const storageKey = "portfolio-theme";
 const themeChangeEvent = "portfolio-theme-change";
@@ -51,14 +54,14 @@ export function ThemeToggle() {
 
   return (
     <button
-      className={styles.themeToggle}
+      className={circularButtonClasses}
       type="button"
       onClick={toggleTheme}
       aria-label={label}
       title={label}
     >
       <svg
-        className={styles.moonIcon}
+        className={`${iconClasses} dark:rotate-70 dark:scale-85 dark:opacity-0`}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -71,7 +74,7 @@ export function ThemeToggle() {
         <path d="M20.9 13.1A9 9 0 0 1 10.9 3.1a9 9 0 1 0 10 10Z" />
       </svg>
       <svg
-        className={styles.sunIcon}
+        className={`${iconClasses} -rotate-70 scale-85 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100`}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

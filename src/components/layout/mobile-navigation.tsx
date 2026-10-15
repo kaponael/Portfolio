@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import styles from "./site-header.module.css";
+import { circularButtonClasses, glassClasses, navLinkClasses } from "./navigation-styles";
 
 type NavigationLink = { label: string; href: string };
 
@@ -53,9 +53,9 @@ export function MobileNavigation({ links }: { links: NavigationLink[] }) {
   }, [isOpen]);
 
   return (
-    <div className={styles.mobileNavigation} ref={containerRef}>
+    <div className="relative min-[769px]:hidden" ref={containerRef}>
       <button
-        className={styles.menuToggle}
+        className={circularButtonClasses}
         type="button"
         ref={buttonRef}
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -63,21 +63,21 @@ export function MobileNavigation({ links }: { links: NavigationLink[] }) {
         aria-controls={menuId}
         onClick={() => setIsOpen((open) => !open)}
       >
-        <span className={styles.menuIcon} aria-hidden="true">
-          <span />
-          <span />
-          <span />
+        <span className="relative block h-4 w-5" aria-hidden="true">
+          <span className={`absolute inset-x-0 top-0 h-0.5 rounded-full bg-current transition-[transform,opacity] duration-220 motion-reduce:transition-none ${isOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+          <span className={`absolute inset-x-0 top-[7px] h-0.5 rounded-full bg-current transition-opacity duration-220 motion-reduce:transition-none ${isOpen ? "opacity-0" : ""}`} />
+          <span className={`absolute inset-x-0 top-3.5 h-0.5 rounded-full bg-current transition-[transform,opacity] duration-220 motion-reduce:transition-none ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
         </span>
       </button>
       <nav
         id={menuId}
-        className={styles.mobilePanel}
+        className={`${glassClasses} absolute top-[calc(100%+0.75rem)] left-0 w-[min(20rem,calc(100vw-2.5rem))] rounded-3xl p-2 motion-reduce:animate-none ${isOpen ? "grid animate-menu-enter" : "hidden"}`}
         aria-label="Mobile navigation"
         hidden={!isOpen}
       >
         {links.map(({ label, href }) => (
           <Link
-            className={styles.navLink}
+            className={`${navLinkClasses} min-h-12 justify-start`}
             href={href}
             key={href}
             onClick={() => setIsOpen(false)}
