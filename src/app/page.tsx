@@ -1,4 +1,5 @@
 import { HomeSection } from "@/components/sections/home-section";
+import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { SkillsSection } from "@/components/sections/skills-section";
 
 const sectionClasses =
@@ -10,9 +11,7 @@ export default function Home() {
     <>
       <HomeSection />
       <SkillsSection />
-      <section id="portfolio" className={sectionClasses} aria-labelledby="portfolio-title">
-        <h2 id="portfolio-title" className={sectionTitleClasses}>Portfolio</h2>
-      </section>
+      <PortfolioSection />
       <section id="contact" className={sectionClasses} aria-labelledby="contact-title">
         <h2 id="contact-title" className={sectionTitleClasses}>Contact Me</h2>
       </section>
