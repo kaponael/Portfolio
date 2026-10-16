@@ -35,8 +35,23 @@ public/            Static assets such as images and icons
 | `npm run dev` | Start the development server |
 | `npm run lint` | Check code with ESLint |
 | `npm run typecheck` | Check TypeScript types |
-| `npm run build` | Create a production build |
-| `npm start` | Serve the production build after building |
+| `npm run build` | Export the production site to `out/` |
+
+## Deploy to Cloudflare Pages
+
+The project uses Next.js static export. Images are served directly from their files, so hosting does not require a Next.js image server.
+
+Connect this GitHub repository to a Cloudflare Pages project with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Framework preset | Next.js (Static HTML Export) |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Node.js version (`NODE_VERSION`) | `24` |
+
+Check the deployed `pages.dev` address first. Then add `elkapshub.com` and `www.elkapshub.com` under the Pages project's **Custom domains**. Replace the existing Netlify DNS targets as part of connecting the domain to Pages.
 
 ## Development steps
 
