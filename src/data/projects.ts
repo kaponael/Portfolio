@@ -7,8 +7,18 @@ import deliveranceImage from "@/images/deliverance.webp";
 import greenieImage from "@/images/greenie2.webp";
 import sarahKeinImage from "@/images/Sarak.webp";
 import lissImage from "@/images/liss.webp";
+import portfolioImage from "@/images/portfolio.webp";
 
 export const projects: Project[] = [
+  {
+    title: "Portfolio",
+    type: "Website",
+    image: portfolioImage,
+    links: [
+      { label: "Website", href: "https://elkapshub.com/" },
+      { label: "Figma", href: "https://www.figma.com/design/68J0mBv8VNzgOqLQ5qXGVT/Portfolio-redesign-?node-id=0-1&t=hoFprR5PRYA3OaiF-1" },
+    ],
+  },
   {
     title: "Vioexelixi Chem Lab",
     type: "Website",
